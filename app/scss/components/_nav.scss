@@ -1,0 +1,29 @@
+@use '../globals';
+@use '../utils';
+
+.nav {
+
+    &__item {
+        margin-bottom: 1rem;
+    }
+
+    &__link {
+        color: globals.$black;
+        font-size: 1.25rem;
+        font-family: utils.$font-primary;
+    }
+
+    @include globals.lg {
+        &__item {
+            transition: transform .6s cubic-bezier(.34,1.56,.64,1);
+            
+            &:hover {
+                transform: translateX(10px);
+            }
+        }
+        
+        &__link {
+            font-size: 1.5rem;
+        }
+    }
+}

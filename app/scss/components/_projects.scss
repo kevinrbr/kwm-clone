@@ -1,0 +1,35 @@
+@use '../globals';
+@use '../utils';
+
+.projects {
+    background-color: globals.$white;
+    padding: 80px 0;
+    
+    &__intro {
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        color: globals.$black;
+        font-family: utils.$font-primary;
+        font-size: 1.25rem;
+        margin-bottom: 16px;
+    }
+
+    @include globals.lg {
+        padding: 56px 0;
+
+        &__intro {
+            margin: 0 8.33%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        &__title {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+    }
+}

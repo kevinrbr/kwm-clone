@@ -1,0 +1,31 @@
+@use '../globals';
+@use '../utils';
+
+.btn {
+    padding: 0.84375rem 1.5rem;
+    height: 52px;
+    font-size: 0.9375rem;
+    overflow: hidden;
+    border-radius: 40px;
+    text-transform: uppercase;
+    border: none;
+    font-family: utils.$font-secondary;
+    font-size: 1.15rem;
+
+    &--black {
+        background-color: globals.$black;
+
+        a {
+            color: globals.$white;
+        }
+    }
+
+    &--white {
+        color: globals.$black;
+        background-color: globals.$white;
+
+        a {
+            color: globals.$black;
+        }
+    }
+}

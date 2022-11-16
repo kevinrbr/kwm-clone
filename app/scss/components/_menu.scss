@@ -1,0 +1,129 @@
+@use '../globals';
+@use '../utils';
+
+.menu {
+
+    &.is-active {
+        // transform: translateY(0);
+
+        .menu__main {
+            transform: translateY(0);
+        }
+
+        .menu__side {
+            transform: translateY(0);
+        }
+    }
+
+    &__main {
+        height: 55vh;
+        background-color: globals.$white;
+        border-radius: 0 0 24px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 8rem 24px 1rem;
+        transition: transform 1.2s cubic-bezier(.075,.82,.165,1);
+        box-shadow: 0 0 24px 0 rgb(0 0 0 / 40%);
+        transform: translateY(-102%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &__side {
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        transform: translateY(-110%);
+        background-color: globals.$purple-primary;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        padding-top: 55Vh;
+        z-index: -1;
+        box-shadow: 0 7px 29px 0 rgb(100 100 111 / 50%);
+        transition: transform 1.5s cubic-bezier(.075,.82,.165,1),background-color .6s cubic-bezier(.075,.82,.165,1);
+        border-radius: 0 0 24px 24px;
+
+        &.is-gray {
+            background-color: globals.$gray-primary;
+        }
+
+        &.is-green {
+            background-color: globals.$green-primary;
+        }
+
+        &.is-pink {
+            background-color: globals.$pink-primary;
+        }
+
+        &.is-blue {
+            background-color: globals.$blue-guy;
+        }
+    }
+
+    &__contact {
+        color: globals.$black;
+        font-size: 1.25rem;
+        font-family: utils.$font-secondary;
+        text-transform: uppercase;
+    }
+
+    &__letter {
+        svg {
+            max-height: 25vw;
+            width: auto;
+        }
+    }
+
+    &__header {
+        position: absolute;
+        top: 25px;
+        right: 30px;
+    }
+
+    &__language {
+        color: globals.$black;
+    }
+
+    @include globals.lg {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        &.is-active {
+            // transform: translateX(0);
+    
+            .menu__main {
+                transform: translateX(0);
+            }
+    
+            .menu__side {
+                transform: translateX(0);
+            }
+        }
+
+        &__main {
+            height: 100vh;
+            width: 25%;
+            border-radius: 0 24px 24px 0;
+            transform: translateX(-102%);
+        }
+
+        &__side {
+            height: 100vh;
+            width: 83.3333333333%;
+            padding-left: 25%;
+            border-radius: 0 24px 24px 0;
+            padding-top: 0;
+            transform: translateX(-110%);
+        }
+    }
+}
+

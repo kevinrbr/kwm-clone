@@ -1,0 +1,54 @@
+@use '../globals';
+
+.card {
+    background-color: globals.$gray-secondary;
+    height: 475px;
+    min-width: 318px;
+    border-radius: 24px;
+    position: relative;
+
+    &__desc {
+        padding: 16px 16px 10px;
+    }
+
+    &__content {
+        color: globals.$black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    &__important {
+        font-weight:  900;
+    }
+
+    &__image-container {
+        border-radius: 24px 24px 0 0;
+        aspect-ratio: 307/241;
+        overflow: hidden;
+    }
+
+    &:hover {
+        .card__image {
+            transform: scale(1.1);
+        }
+    }
+
+    &__image {
+        transform: scale(1);
+        transition: transform 500ms ease-in-out;
+        width: 100%;
+        border-radius: 24px 24px 0 0;
+    }
+
+    &__tags {
+        padding: 16px 16px 10px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    @include globals.lg {
+        width: 369px;
+    }
+}

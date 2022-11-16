@@ -1,0 +1,91 @@
+@use '../globals';
+
+.hero {
+    margin-bottom: 2.5rem;
+    position: relative;
+
+    &__navbar {
+        display: flex;
+        align-items: center;
+        height: 3.75rem;
+        justify-content: space-between;
+        padding: 0 0.75rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        padding-top: 15px;
+    }
+
+    &__logo, &__language {
+        transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+        transform: scale(1);
+
+        &.is-not-visible {
+            transform: scale(0);
+        } 
+    }
+
+    &__language {
+        color: globals.$gray-primary;
+        padding: 16px;
+        transition: opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+        &:hover {
+            opacity: 0.4;
+        }    
+    }
+
+    &__image-container {
+        position: relative;
+        margin-top: 6rem;
+        padding: 0 1.25rem;
+        z-index: -1;
+    }
+
+    &__image {
+        fill: globals.$gray-primary;
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: -1;
+    }
+
+    &__rotate {
+        height: 24vw;
+        width: 24vw;
+        position: absolute;
+        animation: rotation 10s infinite linear;
+        right: 17%;
+        top: -30px;
+    }
+
+    @include globals.lg {
+        &__image-container {
+            padding: 0 3.75rem;
+        }
+        &__rotate {
+            height: 10vw;
+            width: 10vw;
+            right: 12%;
+        }
+    }
+
+    &.menu-open {
+        .hero__logo {
+            display: none;
+        }
+        .hero__language {
+            display: none;
+        }
+    }
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}

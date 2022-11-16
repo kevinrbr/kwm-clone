@@ -1,0 +1,21 @@
+{
+  "name": "kwm",
+  "version": "1.0.0",
+  "description": "Une fois le dossier téléchargé sur le poste, lancer la commande npm run dev à la racine du projet. Ouvrir http://localhost:3000/",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0"
+  },
+  "dependencies": {
+    "gsap": "^3.11.3"
+  }
+}

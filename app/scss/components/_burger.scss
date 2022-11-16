@@ -1,0 +1,70 @@
+@use '../globals';
+
+.burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__main {
+        padding: 16px;
+    }
+    
+    &__inner {
+        z-index: 1000;
+
+        &:hover {
+            svg {
+                transform: scale(1.1) !important;
+            }  
+        }
+        
+        svg {
+            transform: scale(1) !important;
+            transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+        }
+    }
+
+    &-full {
+        background-color: globals.$white;
+        display: flex;
+        padding: 16px;
+        height: 56px;
+        border-radius: 40px;
+
+        path {
+            stroke: globals.$black;
+        }
+    }
+
+    &__side {
+        transform: scale(1);
+        position: absolute;
+        display: flex;
+        height: 56px;
+        padding: 16px;
+        border-radius: 40px;
+        left: 70px;
+        background-color: transparent;
+
+        &-full {
+            transform: translateX(10px);
+            transition: all .3s cubic-bezier(.34,1.56,.64,1);
+            background-color: globals.$white;
+        }
+    }
+
+    &__logo {
+        height: 24px;
+        width: auto;
+        transform: translateX(2px) scale(1);
+    }
+
+    &__letters {
+        opacity: 0;
+        z-index: 1;
+
+        &.is-visible {
+            opacity: 1;
+        }
+    }
+}

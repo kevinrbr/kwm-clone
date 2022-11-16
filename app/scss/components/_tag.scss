@@ -1,0 +1,16 @@
+@use '../globals';
+@use '../utils';
+
+.tag {
+    padding: 6px 8px;
+    border-radius: 32px;
+    border: none;
+    font-family: utils.$font-primary;
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    &--white {
+        background-color: globals.$white;
+        color: globals.$black;
+    }
+}
